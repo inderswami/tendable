@@ -1,0 +1,25 @@
+Defect Title:Automation_ContactUS_No Error Message when message field is blank
+Decription: Precondition: User is on Contact us page
+Error Message should be displayed when Message is blank
+
+Steps to Reproduce
+1 User navigates to Contact us page
+2 Fill required fields except message field
+3 Click on submit button
+
+Expected Result: Error Message should appear.
+Actual Result: No Error Message shown.
+
+Severity: Low
+Priority: Low
+
+Module: Contact US
+Sprint:2
+Project name: XYZ
+
+Snapshot: Aattached
+
+
+
+
+  
