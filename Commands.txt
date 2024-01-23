@@ -1,0 +1,9 @@
+keytool -import -keystore cacerts -storepass <password> -alias Amex_Internal_Root_CA -file Amex_Internal_Root_CA.cer
+
+keytool -import -keystore cacerts -storepass <password> -alias DigiCertHighAssuranceEVRootCA -file DigiCertHighAssuranceEVRootCA.cer
+keytool -import -keystore cacerts -storepass <password> -alias AXP_BlueCerts_Ent_Medium_Policy_CA_II -file AXP_BlueCerts_Ent_Medium_Policy_CA_II.cer
+keytool -import -keystore cacerts -storepass <password> -alias AXP_BlueCerts_Ent_Issuing_CA_II -file AXP_BlueCerts_Ent_Issuing_CA_II.cer
+
+keytool -import -keystore cacerts -storepass <password> -alias DigiCertSHA2ExtendedValidationServerCA -file DigiCertSHA2ExtendedValidationServerCA.cer
+
+keytool -import -keystore cacerts -storepass <password> -alias CertaaSOnDemandIssuingCA -file CertaaSOnDemandIssuingCA.cer

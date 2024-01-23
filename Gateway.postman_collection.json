@@ -1,0 +1,1072 @@
+{
+	"info": {
+		"_postman_id": "5a61a686-906b-45b8-af31-7e5880835ee8",
+		"name": "Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CBO",
+			"item": [
+				{
+					"name": "E1 CBO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"correlation-id\": \"5e8ae52a-2b87-11ee-be56-0242ac120002\",\n        \"rfpJourneyId\": [\n            \"CBO\"\n        ]\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"encrypted_basic_cm15\": \"lMaR4jhdPtGJ03QUQdR3UZqBOy+4rRPP1gebxbD40TJ1gOrmWGFbr+PictGFM2w=\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_id\": \"sample-concern-id\",\n                \"cust_15_380day_avg_pymt_am_local\": null,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"encrypted_bank_acct_no\": \"0000\",\n                \"orig_pymt_am\": 334343.5,\n                \"cust_last_rtn_dt\": null,\n                \"cust_7day_pymt_ct\": 10,\n                \"curr_cd\": \"CAD\",\n                \"encrypted_aba_no\": \"4321\",\n                \"cust_mdf_tenure\": null,\n                \"custmer_retrn_reasn\": \"No\",\n                \"acct_ctry_cd\": \"037\",\n                \"acct_7day_avg_pymt_rt\": 11,\n                \"cust_pymt_chan_cd\": \"2\",\n                \"acct_days_since_last_pmt\": 11,\n                \"cncrn_sub_type\": \"RISKY_PAY_FROM_NEW_DDA_NO_HOLD_REMOVAL\",\n                \"acct_usd_one_expsr\": null,\n                \"cncrn_rank\": 1574,\n                \"acct_type_cd\": \"2\",\n                \"cust_7day_pymt_am\": 10,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cust_new_rtdda_in\": 1\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-dev.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-dev",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New E2 Green CBO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"correlation-id\": \"5e8ae52a-2b87-11ee-be56-0242ac120002\",\n        \"rfpJourneyId\": [\n            \"CBO\"\n        ]\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"encrypted_cm15\": \"UGu+untJisRaNcF4SXs/VQ9A7MGtyiO+FJpWkaOGLtm3JmRBqvY/KOsGvw==\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_id\": \"sample-concern-id\",\n                \"cust_15_380day_avg_pymt_am_local\": null,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"encrypted_bank_acct_no\": \"0000\",\n                \"orig_pymt_am\": null,\n                \"cust_last_rtn_dt\": null,\n                \"cust_7day_pymt_ct\": 10,\n                \"curr_cd\": \"CAD\",\n                \"encrypted_aba_no\": \"4321\",\n                \"cust_mdf_tenure\": null,\n                \"custmer_retrn_reasn\": \"No\",\n                \"acct_ctry_cd\": \"037\",\n                \"acct_7day_avg_pymt_rt\": 11.01,\n                \"free_form_tx_note_case\": \"POSSIBLE CHECK PUMPING\",\n                \"cust_pymt_chan_cd\": \"2\",\n                \"acct_days_since_last_pmt\": 11,\n                \"cncrn_sub_type\": \"RISKY_PAY_FROM_NEW_DDA_NO_HOLD_REMOVAL\",\n                \"acct_usd_one_expsr\": null,\n                \"cncrn_rank\": 1574,\n                \"acct_type_cd\": \"2\",\n                \"cust_7day_pymt_am\": 10,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cust_new_rtdda_in\": 1\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-qaeusw1b3green.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-qaeusw1b3green",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New E2 Blue CBO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"correlation-id\": \"5e8ae52a-2b87-11ee-be56-0242ac120002\",\n        \"rfpJourneyId\": [\n            \"CBO\"\n        ]\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"encrypted_cm15\": \"foUW3pNZnVh8QT0O/xRS/OaNCYufpmLAyhVlPOoHDTerRxQ81Myu0v3IELalXyM=\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_id\": \"sample-concern-id\",\n                \"cust_15_380day_avg_pymt_am_local\": null,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"encrypted_bank_acct_no\": \"0000\",\n                \"orig_pymt_am\": null,\n                \"cust_last_rtn_dt\": null,\n                \"cust_7day_pymt_ct\": 10,\n                \"curr_cd\": \"CAD\",\n                \"encrypted_aba_no\": \"4321\",\n                \"cust_mdf_tenure\": null,\n                \"custmer_retrn_reasn\": \"No\",\n                \"acct_ctry_cd\": \"037\",\n                \"acct_7day_avg_pymt_rt\": 11.01,\n                \"free_form_tx_note_case\": \"POSSIBLE CHECK PUMPING\",\n                \"cust_pymt_chan_cd\": \"2\",\n                \"acct_days_since_last_pmt\": 11,\n                \"cncrn_sub_type\": \"RISKY_PAY_FROM_NEW_DDA_NO_HOLD_REMOVAL\",\n                \"acct_usd_one_expsr\": null,\n                \"cncrn_rank\": 1574,\n                \"acct_type_cd\": \"2\",\n                \"cust_7day_pymt_am\": 10,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cust_new_rtdda_in\": 1\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-qa.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-qa",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local CBO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-B3-SpanId",
+								"value": "02918903d2ce7600",
+								"type": "default"
+							},
+							{
+								"key": "X-B3-ParentSpanId",
+								"value": "02918903d2ce7500",
+								"type": "default"
+							},
+							{
+								"key": "X-B3-TraceId",
+								"value": "fc0f92770b9de0518b0461219b000000",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"correlation-id\": \"5e8ae52a-2b87-11ee-be56-0242ac120002\",\n        \"rfpJourneyId\": [\n            \"CBO\"\n        ]\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"encrypted_cm15\": \"UGu+untJisRaNcF4SXs/VQ9A7MGtyiO+FJpWkaOGLtm3JmRBqvY/KOsGvw==\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_id\": \"sample-concern-id\",\n                \"cust_15_380day_avg_pymt_am_local\": null,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"encrypted_bank_acct_no\": \"0000\",\n                \"orig_pymt_am\": null,\n                \"cust_last_rtn_dt\": null,\n                \"cust_7day_pymt_ct\": 10,\n                \"curr_cd\": \"CAD\",\n                \"encrypted_aba_no\": \"4321\",\n                \"cust_mdf_tenure\": null,\n                \"custmer_retrn_reasn\": \"No\",\n                \"acct_ctry_cd\": \"037\",\n                \"acct_7day_avg_pymt_rt\": 11.01,\n                \"free_form_tx_note_case\": \"POSSIBLE CHECK PUMPING\",\n                \"cust_pymt_chan_cd\": \"2\",\n                \"acct_days_since_last_pmt\": 11,\n                \"cncrn_sub_type\": \"RISKY_PAY_FROM_NEW_DDA_NO_HOLD_REMOVAL\",\n                \"acct_usd_one_expsr\": null,\n                \"cncrn_rank\": 1574,\n                \"acct_type_cd\": \"2\",\n                \"cust_7day_pymt_am\": 10,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cust_new_rtdda_in\": 1\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rf/v1/gateway/journeys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local CBO Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-B3-SpanId",
+								"value": "02918903d2ce7600",
+								"type": "default"
+							},
+							{
+								"key": "X-B3-ParentSpanId",
+								"value": "02918903d2ce7500",
+								"type": "default"
+							},
+							{
+								"key": "X-B3-TraceId",
+								"value": "fc0f92770b9de0518b0461219b000000",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"correlation-id\": \"5e8ae52a-2b87-11ee-be56-0242ac120002\",\n        \"rfpJourneyId\": [\n            \"CBO\"\n        ]\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"encrypted_cm15\": \"UGu+untJisRaNcF4SXs/VQ9A7MGtyiO+FJpWkaOGLtm3JmRBqvY/KOsGvw==\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_id\": \"sample-concern-id\",\n                \"cust_15_380day_avg_pymt_am_local\": null,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"encrypted_bank_acct_no\": \"0000\",\n                \"orig_pymt_am\": null,\n                \"cust_last_rtn_dt\": null,\n                \"cust_7day_pymt_ct\": 10,\n                \"curr_cd\": \"CAD\",\n                \"encrypted_aba_no\": \"4321\",\n                \"cust_mdf_tenure\": null,\n                \"custmer_retrn_reasn\": \"No\",\n                \"acct_ctry_cd\": \"037\",\n                \"acct_7day_avg_pymt_rt\": 11.01,\n                \"free_form_tx_note_case\": \"POSSIBLE CHECK PUMPING\",\n                \"cust_pymt_chan_cd\": \"2\",\n                \"acct_days_since_last_pmt\": 11,\n                \"cncrn_sub_type\": \"RISKY_PAY_FROM_NEW_DDA_NO_HOLD_REMOVAL\",\n                \"acct_usd_one_expsr\": null,\n                \"cncrn_rank\": 1574,\n                \"acct_type_cd\": \"2\",\n                \"cust_7day_pymt_am\": 10,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cust_new_rtdda_in\": 1\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-dev.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-dev",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E3 Blue CBO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"correlation-id\": \"5e8ae52a-2b87-11ee-be56-0242ac120002\",\n        \"rfpJourneyId\": [\n            \"CBO\"\n        ]\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"encrypted_cm15\": \"foUW3pNZnVh8QT0O/xRS/OaNCYufpmLAyhVlPOoHDTerRxQ81Myu0v3IELalXyM=\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_id\": \"sample-concern-id\",\n                \"cust_15_380day_avg_pymt_am_local\": null,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"encrypted_bank_acct_no\": \"0000\",\n                \"orig_pymt_am\": null,\n                \"cust_last_rtn_dt\": null,\n                \"cust_7day_pymt_ct\": 10,\n                \"curr_cd\": \"CAD\",\n                \"encrypted_aba_no\": \"4321\",\n                \"cust_mdf_tenure\": null,\n                \"custmer_retrn_reasn\": \"No\",\n                \"acct_ctry_cd\": \"037\",\n                \"acct_7day_avg_pymt_rt\": 11.01,\n                \"free_form_tx_note_case\": \"POSSIBLE CHECK PUMPING\",\n                \"cust_pymt_chan_cd\": \"2\",\n                \"acct_days_since_last_pmt\": 11,\n                \"cncrn_sub_type\": \"RISKY_PAY_FROM_NEW_DDA_NO_HOLD_REMOVAL\",\n                \"acct_usd_one_expsr\": null,\n                \"cncrn_rank\": 1574,\n                \"acct_type_cd\": \"2\",\n                \"cust_7day_pymt_am\": 10,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cust_new_rtdda_in\": 1\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CC",
+			"item": [
+				{
+					"name": "Local CC All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "HeaderTest",
+								"value": "HeaderValue",
+								"type": "default"
+							},
+							{
+								"key": "AX-Correlation-ID",
+								"value": "{{$guid}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CREDIT_CONCERN\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"credit_concern\": {\n                \"acct_ctry_cd\": \"US\",\n                \"cm15\": \"lMaR4jhdPtGJ03QUQdR3UZqBOy+4rRPP1gebxbD40TJ1gOrmWGFbr+PictGFM2w=\",\n                \"acct_curr_mkt_cd\": \"USD\",\n                \"acct_one_expsr_local_curr_am\": 119.23,\n                \"se_number_15_dig\": \"12343233534\",\n                \"se_name_enhnc\": \"Walmart\",\n                \"currency_cd\": \"CAD\",\n                \"conv_amt\": 23.45,\n                \"trans_ts\": \"2023-03-03T00:00:00.973\",\n                \"trans_aprv_deny_cd\": \"1\",\n                \"acct_tot_due_am\": 12.34,\n                \"amp_envir\": \"PRODUCTION\",\n                \"cr_cncrn_final_resp_list\": [\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 600,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"c110f3b7-fa95-48e3-b42c-6d21f711aa0c\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"OPT_IN_GL\",\n                            \"cncrn_type\": \"OUT_OF_PATTERN\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": 0,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    },\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 500,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"1dcff4a9-1417-4baa-846b-8e124b582203\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"HR_STATUS_GROUP\",\n                            \"cncrn_type\": \"DELINQUENT\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": null,\n                        \"acct_cncrn_trgr_rsn\": null,\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    },\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 900,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"2380df34-90e2-4f05-945f-8338b5cf5f63\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"PAST_DUE_DECLINE\",\n                            \"cncrn_type\": \"POINT_OF_SALE_DECLINE\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": null,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rf/v1/gateway/journeys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E1 CC Single OOP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "HeaderTest",
+								"value": "HeaderValue",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CREDIT_CONCERN\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"credit_concern\": {\n                \"acct_ctry_cd\": \"US\",\n                \"cm15\": \"lMaR4jhdPtGJ03QUQdR3UZqBOy+4rRPP1gebxbD40TJ1gOrmWGFbr+PictGFM2w=\",\n                \"acct_curr_mkt_cd\": \"USD\",\n                \"acct_one_expsr_local_curr_am\": 119.23,\n                \"se_number_15_dig\": \"12343233534\",\n                \"se_name_enhnc\": \"Walmart\",\n                \"currency_cd\": \"CAD\",\n                \"conv_amt\": 23.45,\n                \"trans_ts\": \"2023-03-03 00:00:00.973\",\n                \"trans_aprv_deny_cd\": \"1\",\n                \"acct_tot_due_am\": 12.34,\n                \"amp_envir\": \"PRODUCTION\",\n                \"cr_cncrn_final_resp_list\": [\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 600,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"c110f3b7-fa95-48e3-b42c-6d21f711aa0c\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"OPT_IN_GL\",\n                            \"cncrn_type\": \"OUT_OF_PATTERN\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": 0,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"Yes\",\n                        \"trgr_commun_in\": \"No\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-dev.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-dev",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E1 CC All POSD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "HeaderTest",
+								"value": "HeaderValue",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CREDIT_CONCERN\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"credit_concern\": {\n                \"acct_ctry_cd\": \"US\",\n                \"cm15\": \"lMaR4jhdPtGJ03QUQdR3UZqBOy+4rRPP1gebxbD40TJ1gOrmWGFbr+PictGFM2w=\",\n                \"se_number_15_dig\": \"12343233534\",\n                \"se_name_enhnc\": \"Walmart\",\n                \"currency_cd\": \"CAD\",\n                \"conv_amt\": 23.45,\n                \"trans_ts\": \"2023-03-03 00:00:00.973\",\n                \"trans_aprv_deny_cd\": \"1\",\n                \"acct_tot_due_am\": 12.34,\n                \"amp_envir\": \"PRODUCTION\",\n                \"cr_cncrn_final_resp_list\": [\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 900,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"2380df34-90e2-4f05-945f-8338b5cf5f63\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"PAST_DUE_DECLINE\",\n                            \"cncrn_type\": \"POINT_OF_SALE_DECLINE\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": null,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-dev.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-dev",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E1 CC All Delinquent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "HeaderTest",
+								"value": "HeaderValue",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CREDIT_CONCERN\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"credit_concern\": {\n                \"acct_ctry_cd\": \"US\",\n                \"cm15\": \"lMaR4jhdPtGJ03QUQdR3UZqBOy+4rRPP1gebxbD40TJ1gOrmWGFbr+PictGFM2w=\",\n                \"acct_curr_mkt_cd\": \"USD\",\n                \"acct_one_expsr_local_curr_am\": 119.23,\n                \"se_number_15_dig\": \"12343233534\",\n                \"se_name_enhnc\": \"Walmart\",\n                \"currency_cd\": \"CAD\",\n                \"conv_amt\": 23.45,\n                \"trans_ts\": \"2023-03-03 00:00:00.973\",\n                \"trans_aprv_deny_cd\": \"1\",\n                \"acct_tot_due_am\": 12.34,\n                \"amp_envir\": \"PRODUCTION\",\n                \"cr_cncrn_final_resp_list\": [\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 500,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"1dcff4a9-1417-4baa-846b-8e124b582203\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"HR_STATUS_GROUP\",\n                            \"cncrn_type\": \"DELINQUENT\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": null,\n                        \"acct_cncrn_trgr_rsn\": null,\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-dev.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-dev",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E1 CC All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "HeaderTest",
+								"value": "HeaderValue",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CREDIT_CONCERN\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"credit_concern\": {\n                \"acct_ctry_cd\": \"US\",\n                \"cm15\": \"lMaR4jhdPtGJ03QUQdR3UZqBOy+4rRPP1gebxbD40TJ1gOrmWGFbr+PictGFM2w=\",\n                \"acct_curr_mkt_cd\": \"USD\",\n                \"acct_one_expsr_local_curr_am\": 119.23,\n                \"se_number_15_dig\": \"12343233534\",\n                \"se_name_enhnc\": \"Walmart\",\n                \"currency_cd\": \"CAD\",\n                \"conv_amt\": 23.45,\n                \"trans_ts\": \"2023-03-03 00:00:00.973\",\n                \"trans_aprv_deny_cd\": \"1\",\n                \"acct_tot_due_am\": 12.34,\n                \"amp_envir\": \"PRODUCTION\",\n                \"cr_cncrn_final_resp_list\": [\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 600,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"c110f3b7-fa95-48e3-b42c-6d21f711aa0c\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"OPT_IN_GL\",\n                            \"cncrn_type\": \"OUT_OF_PATTERN\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": 0,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    },\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 500,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"1dcff4a9-1417-4baa-846b-8e124b582203\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"HR_STATUS_GROUP\",\n                            \"cncrn_type\": \"DELINQUENT\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": null,\n                        \"acct_cncrn_trgr_rsn\": null,\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    },\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 900,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"2380df34-90e2-4f05-945f-8338b5cf5f63\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"PAST_DUE_DECLINE\",\n                            \"cncrn_type\": \"POINT_OF_SALE_DECLINE\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": null,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-dev.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-dev",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E2 CC Single",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "HeaderTest",
+								"value": "HeaderValue",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CREDIT_CONCERN\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"credit_concern\": {\n                \"acct_ctry_cd\": \"US\",\n                \"cm15\": \"foUW3pNZnVh8QT0O/xRS/OaNCYufpmLAyhVlPOoHDTerRxQ81Myu0v3IELalXyM=\",\n                \"acct_curr_mkt_cd\": \"USD\",\n                \"acct_one_expsr_local_curr_am\": 119.23,\n                \"se_number_15_dig\": \"12343233534\",\n                \"se_name_enhnc\": \"Walmart\",\n                \"currency_cd\": \"CAD\",\n                \"conv_amt\": 23.45,\n                \"trans_ts\": \"2023-03-03 00:00:00.973\",\n                \"trans_aprv_deny_cd\": \"1\",\n                \"acct_tot_due_am\": 12.34,\n                \"amp_envir\": \"PRODUCTION\",\n                \"cr_cncrn_final_resp_list\": [\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 600,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"c110f3b7-fa95-48e3-b42c-6d21f711aa0c\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"OPT_IN_GL\",\n                            \"cncrn_type\": \"OUT_OF_PATTERN\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": 0,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"Yes\",\n                        \"trgr_commun_in\": \"No\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-qa.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-qa",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E2 CC All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "HeaderTest",
+								"value": "HeaderValue",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CREDIT_CONCERN\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"credit_concern\": {\n                \"acct_ctry_cd\": \"US\",\n                \"cm15\": \"foUW3pNZnVh8QT0O/xRS/OaNCYufpmLAyhVlPOoHDTerRxQ81Myu0v3IELalXyM=\",\n                \"acct_curr_mkt_cd\": \"USD\",\n                \"acct_one_expsr_local_curr_am\": 119.23,\n                \"se_number_15_dig\": \"12343233534\",\n                \"se_name_enhnc\": \"Walmart\",\n                \"currency_cd\": \"CAD\",\n                \"conv_amt\": 23.45,\n                \"trans_ts\": \"2023-03-03T16:34:56\",\n                \"trans_aprv_deny_cd\": \"1\",\n                \"acct_tot_due_am\": 12.34,\n                \"amp_envir\": \"PRODUCTION\",\n                \"cr_cncrn_final_resp_list\": [\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 600,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T11:09:42.12456\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"c110f3b7-fa95-48e3-b42c-6d21f711aa0c\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"OPT_IN_GL\",\n                            \"cncrn_type\": \"OUT_OF_PATTERN\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": 0,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    },\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 500,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T11:09:42.12456\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"1dcff4a9-1417-4baa-846b-8e124b582203\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"HR_STATUS_GROUP\",\n                            \"cncrn_type\": \"DELINQUENT\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": null,\n                        \"acct_cncrn_trgr_rsn\": null,\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    },\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 900,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T11:09:42.12456\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"CREDIT\",\n                            \"cncrn_id\": \"2380df34-90e2-4f05-945f-8338b5cf5f63\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"PAST_DUE_DECLINE\",\n                            \"cncrn_type\": \"POINT_OF_SALE_DECLINE\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": null,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"YES\",\n                        \"trgr_commun_in\": \"No\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-qa.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-qa",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DCV",
+			"item": [
+				{
+					"name": "E1 DCV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"DCV\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"dcv\": {\n                \"acct_mkt_cd\": \"037\",\n                \"acct_type_cd\": \"1\",\n                \"cm15\": 37644238391234,\n                \"cncrn_grp\": \"FRAUD\",\n                \"cncrn_type\": \"CREDITREMIT\",\n                \"cncrn_sub_type\": \"CREDITSNEW\",\n                \"currency_cd\": \"gh\",\n                \"conv_amt\": 23.45,\n                \"product_typ\": \"cvh\",\n                \"customer_email_addr\": \"cvh\",\n                \"billing_phone_no\": \"cvh\",\n                \"basic15_dgt_acct_no\": \"4238391234\",\n                \"cust_xref_id\": 37644238391239,\n                \"se_ctgy_cd\": 6442389,\n                \"trans_mode_pt_sale\": \"gh\",\n                \"prod_literal\": \"gh\",\n                \"dialer_delay_min_in\": 0,\n                \"trgr_sms_email_push_in\": \"cvh\",\n                \"srce_ntfy_jrny_type\": \"gh\",\n                \"sms_chan_commun_type\": \"gh\",\n                \"email_chan_commun_type\": \"sng\",\n                \"push_chan_commun_type\": \"stg\",\n                \"trans_aprv_deny_cd\": \"gh\",\n                \"trans_acct_first_nm\": \"gh\",\n                \"se_name\": \"gh\",\n                \"txn_date_time\": \"2022-05-14\",\n                \"trans_id\": \"gh\",\n                \"phone_frm_dcp_cstone_nm\": \"v\",\n                \"trans_email\": \"gh\",\n                \"basic_phone\": \"gh\",\n                \"basic_email\": \"gh\",\n                \"alrt_user_def1_used_frd\": \"gh\",\n                \"alrt_user_def2_used_frd\": \"gh\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-dev.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-dev",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local DCV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"DCV\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"dcv\": {\n                \"acct_mkt_cd\": \"037\",\n                \"acct_type_cd\": \"1\",\n                \"cm15\": 37644238391234,\n                \"cncrn_grp\": \"FRAUD\",\n                \"cncrn_type\": \"CREDITREMIT\",\n                \"cncrn_sub_type\": \"CREDITSNEW\",\n                \"currency_cd\": \"gh\",\n                \"conv_amt\": 23.45,\n                \"product_typ\": \"cvh\",\n                \"customer_email_addr\": \"cvh\",\n                \"billing_phone_no\": \"cvh\",\n                \"basic15_dgt_acct_no\": \"4238391234\",\n                \"cust_xref_id\": 37644238391239,\n                \"se_ctgy_cd\": 6442389,\n                \"trans_mode_pt_sale\": \"gh\",\n                \"prod_literal\": \"gh\",\n                \"dialer_delay_min_in\": 0,\n                \"trgr_sms_email_push_in\": \"cvh\",\n                \"srce_ntfy_jrny_type\": \"gh\",\n                \"sms_chan_commun_type\": \"gh\",\n                \"email_chan_commun_type\": \"sng\",\n                \"push_chan_commun_type\": \"stg\",\n                \"trans_aprv_deny_cd\": \"gh\",\n                \"trans_acct_first_nm\": \"gh\",\n                \"se_name\": \"gh\",\n                \"txn_date_time\": \"2022-05-14\",\n                \"trans_id\": \"gh\",\n                \"phone_frm_dcp_cstone_nm\": \"v\",\n                \"trans_email\": \"gh\",\n                \"basic_phone\": \"gh\",\n                \"basic_email\": \"gh\",\n                \"alrt_user_def1_used_frd\": \"gh\",\n                \"alrt_user_def2_used_frd\": \"gh\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rf/v1/gateway/journeys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AMP Gateway",
+			"item": [
+				{
+					"name": "E1 CBO & DCV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe000000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CBO\",\n            \"DCV\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"encrypted_cm15\": \"CBfgYXqwJW27kvCb1ed3Yu+i3KsR8RdbXc/sBliEMb36D99SO0I+fYIRGg==\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_id\": \"sample-concern-id\",\n                \"cust_15_380day_avg_pymt_am_local\": null,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"encrypted_bank_acct_no\": \"0000\",\n                \"orig_pymt_am\": null,\n                \"cust_last_rtn_dt\": null,\n                \"cust_7day_pymt_ct\": 10,\n                \"curr_cd\": \"CAD\",\n                \"encrypted_aba_no\": \"4321\",\n                \"cust_mdf_tenure\": null,\n                \"custmer_retrn_reasn\": \"No\",\n                \"acct_ctry_cd\": \"AU\",\n                \"acct_7day_avg_pymt_rt\": 11.01,\n                \"free_form_tx_note_case\": \"POSSIBLE CHECK PUMPING\",\n                \"cust_pymt_chan_cd\": \"2\",\n                \"acct_days_since_last_pmt\": 11,\n                \"cncrn_sub_type\": \"2\",\n                \"acct_usd_one_expsr\": null,\n                \"cncrn_rank\": 1574,\n                \"acct_type_cd\": \"2\",\n                \"cust_7day_pymt_am\": 10,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cust_new_rtdda_in\": 1\n            },\n            \"dcv\": {\n                \"acct_mkt_cd\": \"03\",\n                \"acct_type_cd\": \"1\",\n                \"encrypted_cm15\": 123456789,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cncrn_type\": \"CREDITBUSTOUTHELDREMIT\",\n                \"cncrn_sub_type\": \"CREDITSNEW\",\n                \"trans_ts\": \"2019-01-01T00:00:00.000Z\",\n                \"currency_cd\": \"gh\",\n                \"conv_amt\": 23.45,\n                \"product_typ\": \"cvh\",\n                \"customer_email_addr\": \"cvh\",\n                \"billing_phone_no\": \"cvh\",\n                \"encrypted_basic15_dgt_acct_no\": \"4238391234\",\n                \"card_basic_supp_in\": \"cvh\",\n                \"cust_xref_id\": 644238391239,\n                \"se_ctgy_cd\": 1,\n                \"trans_mode_pt_sale\": \"gh\",\n                \"prod_literal\": \"gh\",\n                \"dialer_delay_min_in\": 0,\n                \"trgr_sms_email_push_in\": \"cvh\",\n                \"srce_ntfy_jrny_type\": \"gh\",\n                \"sms_chan_commun_type\": \"gh\",\n                \"email_chan_commun_type\": \"sng\",\n                \"push_chan_commun_type\": \"stg\",\n                \"trans_aprv_deny_cd\": \"gh\",\n                \"trans_acct_first_nm\": \"gh\",\n                \"se_name_enhnc\": \"gh\",\n                \"txn_date_time\": \"2019-01-01T00:00:00.000Z\",\n                \"trans_id\": \"gh\",\n                \"phone_frm_dcp_cstone_nm\": \"v\",\n                \"trans_email\": \"gh\",\n                \"basic_phone\": \"gh\",\n                \"basic_email\": \"gh\",\n                \"alrt_user_def1\": \"gh\",\n                \"alrt_user_def2\": \"gh\",\n                \"trgr_commun_event_type\": \"afdg\",\n                \"trgr_commun_in\": \"fsxf\",\n                \"application\": \"AMP\",\n                \"applicationId\": \"XB0078D\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-dev.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-dev",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E1 CBO & CC",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe000000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CBO\",\n            \"CC\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"encrypted_cm15\": \"CBfgYXqwJW27kvCb1ed3Yu+i3KsR8RdbXc/sBliEMb36D99SO0I+fYIRGg==\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_id\": \"sample-concern-id\",\n                \"cust_15_380day_avg_pymt_am_local\": null,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"encrypted_bank_acct_no\": \"0000\",\n                \"orig_pymt_am\": null,\n                \"cust_last_rtn_dt\": null,\n                \"cust_7day_pymt_ct\": 10,\n                \"curr_cd\": \"CAD\",\n                \"encrypted_aba_no\": \"4321\",\n                \"cust_mdf_tenure\": null,\n                \"custmer_retrn_reasn\": \"No\",\n                \"acct_ctry_cd\": \"AU\",\n                \"acct_7day_avg_pymt_rt\": 11.01,\n                \"free_form_tx_note_case\": \"POSSIBLE CHECK PUMPING\",\n                \"cust_pymt_chan_cd\": \"2\",\n                \"acct_days_since_last_pmt\": 11,\n                \"cncrn_sub_type\": \"2\",\n                \"acct_usd_one_expsr\": null,\n                \"cncrn_rank\": 1574,\n                \"acct_type_cd\": \"2\",\n                \"cust_7day_pymt_am\": 10,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cust_new_rtdda_in\": 1\n            },\n            \"cc\": {\n                \"acct_tot_due_am\": 12.34,\n                \"cncrn_type\": \"DELINQUENT\",\n                \"se_name_enhnc\": \"Walmart\",\n                \"acct_one_expsr_local_curr_am\": 119.23,\n                \"cncrn_id\": \"3971158\",\n                \"acct_oop_cncrn_trgr_rsn\": \"USD\",\n                \"trans_ts\": \"2023-03-03 00:00:00.973\",\n                \"acct_ctry_cd\": \"US\",\n                \"acct_curr_mkt_cd\": \"CAD\",\n                \"cncrn_creat_ts\": \"08-MAY-23 12.00.00.000000000 AM\",\n                \"CM15\": 123,\n                \"acct_oop_cncrn_rcmmd_pymt_am\": 346.05,\n                \"cncrn_lvl\": \"ACCT\",\n                \"trans_aprv_deny_cd\": \"1\",\n                \"cncrn_sub_type\": \"OUT OF PATTERN\",\n                \"currency_cd\": \"23\",\n                \"cncrn_rank\": 5431,\n                \"acct_type_cd\": \"1\",\n                \"se_number_15_dig\": \"12343233534\",\n                \"encrypted_cm15\": \"asd\",\n                \"cncrn_grp\": \"CREDIT\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rfapigateway-dev.aexp.com/rf/v1/gateway/journeys",
+							"protocol": "https",
+							"host": [
+								"rfapigateway-dev",
+								"aexp",
+								"com"
+							],
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local CBO & CC",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"traceId\": \"23c3498210d2d281875a3f23fe000000\",\n        \"correlation-id\": \"dca1875a3f34ac00\",\n        \"rfpJourneyId\": [\n            \"CBO\",\n            \"CC\"\n        ],\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"encrypted_cm15\": \"CBfgYXqwJW27kvCb1ed3Yu+i3KsR8RdbXc/sBliEMb36D99SO0I+fYIRGg==\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_id\": \"sample-concern-id\",\n                \"cust_15_380day_avg_pymt_am_local\": null,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"encrypted_bank_acct_no\": \"0000\",\n                \"orig_pymt_am\": null,\n                \"cust_last_rtn_dt\": null,\n                \"cust_7day_pymt_ct\": 10,\n                \"curr_cd\": \"CAD\",\n                \"encrypted_aba_no\": \"4321\",\n                \"cust_mdf_tenure\": null,\n                \"custmer_retrn_reasn\": \"No\",\n                \"acct_ctry_cd\": \"AU\",\n                \"acct_7day_avg_pymt_rt\": 11.01,\n                \"free_form_tx_note_case\": \"POSSIBLE CHECK PUMPING\",\n                \"cust_pymt_chan_cd\": \"2\",\n                \"acct_days_since_last_pmt\": 11,\n                \"cncrn_sub_type\": \"2\",\n                \"acct_usd_one_expsr\": null,\n                \"cncrn_rank\": 1574,\n                \"acct_type_cd\": \"2\",\n                \"cust_7day_pymt_am\": 10,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cust_new_rtdda_in\": 1\n            },\n            \"cc\": {\n                \"acct_tot_due_am\": 12.34,\n                \"cncrn_type\": \"DELINQUENT\",\n                \"se_name_enhnc\": \"Walmart\",\n                \"acct_one_expsr_local_curr_am\": 119.23,\n                \"cncrn_id\": \"3971158\",\n                \"acct_oop_cncrn_trgr_rsn\": \"USD\",\n                \"trans_ts\": \"2023-03-03 00:00:00.973\",\n                \"acct_ctry_cd\": \"US\",\n                \"acct_curr_mkt_cd\": \"CAD\",\n                \"cncrn_creat_ts\": \"08-MAY-23 12.00.00.000000000 AM\",\n                \"CM15\": 123,\n                \"acct_oop_cncrn_rcmmd_pymt_am\": 346.05,\n                \"cncrn_lvl\": \"ACCT\",\n                \"trans_aprv_deny_cd\": \"1\",\n                \"cncrn_sub_type\": \"OUT OF PATTERN\",\n                \"currency_cd\": \"23\",\n                \"cncrn_rank\": 5431,\n                \"acct_type_cd\": \"1\",\n                \"se_number_15_dig\": \"12343233534\",\n                \"encrypted_cm15\": \"asd\",\n                \"cncrn_grp\": \"CREDIT\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rf/v1/gateway/journeys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local CBO & DCV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"correlation-id\": \"5e8ae52a-2b87-11ee-be56-0242ac120002\",\n        \"rfpJourneyId\": [\n            \"CBO\",\n            \"DCV\"\n        ]\n    },\n    \"rfp_payloads\": [\n        {\n            \"cbo\": {\n                \"cncrn_grp\": \"CREDIT\",\n                \"encrypted_cm15\": \"yt9BXRVlEwu0W+1ofHXRIHlk1WQcTGyTdbxjQa1NqfCHRddAYa9Ys6f72J2Qo0=\",\n                \"acct_ctry_cd\": \"037\",\n                \"acct_type_cd\": 3,\n                \"cncrn_id\": \"ohkQdvrXtztoqtrTb9reOXysO\",\n                \"cncrn_type\": \"CREDIT_BUST_OUT_HELD_REMIT\",\n                \"cncrn_sub_type\": \"LI6JPXJ1OfUrqBCvrsx\",\n                \"cncrn_rank\": 6887,\n                \"event_trgr_ts\": \"2023-02-01T11:49:59.000000000\",\n                \"acct_usd_one_expsr\": 98756787.8787878734343,\n                \"cust_15_380day_avg_pymt_am_local\": 235234234235,\n                \"cust_mdf_tenure\": 644238323,\n                \"acct_days_since_last_pmt\": 457,\n                \"cust_pymt_chan_cd\": \"3\",\n                \"custmer_retrn_reasn\": \"34\",\n                \"cust_last_rtn_dt\": \"2023-02-01\",\n                \"acct_7day_avg_pymt_rt\": 235.78,\n                \"orig_pymt_am\": 473.58,\n                \"curr_cd\": \"USD\",\n                \"cust_new_rtdda_in\": 0,\n                \"encrypted_bank_acct_no\": \"3456\",\n                \"encrypted_aba_no\": 2345,\n                \"cust_7day_pymt_am\": 4485,\n                \"cust_7day_pymt_ct\": 78,\n                \"free_form_tx_note_case\": \"test\"\n            },\n            \"dcv\": {\n                \"acct_mkt_cd\": \"03\",\n                \"acct_type_cd\": \"1\",\n                \"encrypted_cm15\": 123456789,\n                \"cncrn_grp\": \"CREDIT\",\n                \"cncrn_type\": \"CREDITBUSTOUTHELDREMIT\",\n                \"cncrn_sub_type\": \"CREDITSNEW\",\n                \"trans_ts\": \"2019-01-01T00:00:00.000Z\",\n                \"currency_cd\": \"gh\",\n                \"conv_amt\": 23.45,\n                \"product_typ\": \"cvh\",\n                \"customer_email_addr\": \"cvh\",\n                \"billing_phone_no\": \"cvh\",\n                \"encrypted_basic15_dgt_acct_no\": \"4238391234\",\n                \"card_basic_supp_in\": \"cvh\",\n                \"cust_xref_id\": 644238391239,\n                \"se_ctgy_cd\": 1,\n                \"trans_mode_pt_sale\": \"gh\",\n                \"prod_literal\": \"gh\",\n                \"dialer_delay_min_in\": 0,\n                \"trgr_sms_email_push_in\": \"cvh\",\n                \"srce_ntfy_jrny_type\": \"gh\",\n                \"sms_chan_commun_type\": \"gh\",\n                \"email_chan_commun_type\": \"sng\",\n                \"push_chan_commun_type\": \"stg\",\n                \"trans_aprv_deny_cd\": \"gh\",\n                \"trans_acct_first_nm\": \"gh\",\n                \"se_name_enhnc\": \"gh\",\n                \"txn_date_time\": \"2019-01-01T00:00:00.000Z\",\n                \"trans_id\": \"gh\",\n                \"phone_frm_dcp_cstone_nm\": \"v\",\n                \"trans_email\": \"gh\",\n                \"basic_phone\": \"gh\",\n                \"basic_email\": \"gh\",\n                \"alrt_user_def1\": \"gh\",\n                \"alrt_user_def2\": \"gh\",\n                \"trgr_commun_event_type\": \"afdg\",\n                \"trgr_commun_in\": \"fsxf\",\n                \"application\": \"AMP\",\n                \"applicationId\": \"XB0078D\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8443/rf/v1/gateway/journeys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Gateway Implementation",
+			"item": [
+				{
+					"name": "Gateway Credit Local",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "HeaderTest",
+								"value": "HeaderValue",
+								"type": "default"
+							},
+							{
+								"key": "AX-Correlation-ID",
+								"value": "{{$guid}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"outbound_header\": {\n        \"correlation-id\": \"1234\",\n        \"traceId\": \"23c3498210d2d281875a3f23fe0SA000\",\n        \"rfpSink\": true\n    },\n    \"rfp_payloads\": [\n        {\n            \"cr_fullfillment_model\": {\n                \"cr_fullfillment_common_variables\": {\n                    \"acct_ctry_cd\": \"US\",\n                    \"cm15\": \"AjA4ZTA5YmZmYmU0MDRiYzJhYjI5NDJlNDg4N2VkZTFmPYHMBNfuEbqOzpRBOC1jlWPBXis5edPGcLKK86LycFPAlippWgB58rkPmA==\",\n                    \"acct_curr_mkt_cd\": \"USD\",\n                    \"acct_one_expsr_local_curr_am\": 119.23,\n                    \"se_number_15_dig\": \"12343233534\",\n                    \"se_name_enhnc\": \"Walmart\",\n                    \"currency_cd\": \"CAD\",\n                    \"conv_amt\": 23.45,\n                    \"trans_ts\": \"2023-03-03 00:00:00.973\",\n                    \"trans_aprv_deny_cd\": \"1\",\n                    \"acct_tot_due_am\": 12.34,\n                    \"amp_envir\": \"PRODUCTION\"\n                },\n                \"cr_cncrn_final_resp_list\": [\n                    {\n                        \"concernData\": {\n                            \"req_pymt_am\": 100,\n                            \"acct_type_cd\": 1,\n                            \"cncrn_rank\": 600,\n                            \"cncrn_close_ts\": null,\n                            \"cncrn_creat_ts\": \"2023-09-08T00:09:42.704700233\",\n                            \"last_updated_timestamp\": \"2023-09-08T00:09:42.704700233\",\n                            \"cust_xref_id\": 1234567890,\n                            \"cncrn_grp\": \"Credit\",\n                            \"cncrn_id\": \"c110f3b7-fa95-48e3-b42c-6d21f711aa0c\",\n                            \"cncrn_lvl\": \"Account\",\n                            \"cncrn_sta\": \"Concern Created\",\n                            \"cncrn_sub_type\": \"OPT_IN_GL\",\n                            \"journ_type\": \"credit_concerns\",\n                            \"cncrn_type\": \"OUT_OF_PATTERN\",\n                            \"hash_acct_id\": \"decca3ff014f7722c6ffc4b99997118b1af092f260c962570a52f759538d3d2c\",\n                            \"hash_cm15\": null\n                        },\n                        \"acct_fulfil_in\": null,\n                        \"cr_cncrn_trgr_in\": 1,\n                        \"suppr_cncrn_db_in\": 0,\n                        \"suppr_refer_reduce_in\": 0,\n                        \"acct_cncrn_trgr_rsn\": \"C1a\",\n                        \"cr_cncrn_act\": \"CREATE\",\n                        \"trgr_case_in\": \"Yes\",\n                        \"trgr_commun_in\": \"No\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rf/v1/gateway/journeys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rf",
+								"v1",
+								"gateway",
+								"journeys"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "A2A",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const appID = postman.getEnvironmentVariable(\"appID\");",
+							"const secret = postman.getEnvironmentVariable(\"secret\");",
+							"const version = postman.getEnvironmentVariable(\"version\");",
+							"generateHash = (message, secret) => {",
+							"const hash = CryptoJS.HmacSHA256(message, secret);",
+							"var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);",
+							"hashInBase64 = hashInBase64.replace(/\\//g, '_').replace(/\\+/g, '-').replace(/\\=/g,'');",
+							"return hashInBase64;",
+							"};",
+							"getMacID = (secret, version, appID) => {",
+							"const tsn_value = Date.now();",
+							"postman.setEnvironmentVariable('timestamp',tsn_value);",
+							"const message = appID + '-' + version + '-' + tsn_value;",
+							"return generateHash(message, secret);",
+							"};",
+							"const decodedSecret = CryptoJS.enc.Base64.parse(secret);",
+							"const mac = getMacID(decodedSecret, version, appID);",
+							"postman.setEnvironmentVariable('hmac-Signature',mac);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"auth_token\", jsonData.authorization_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Auth-AppID",
+						"value": "{{appID}}"
+					},
+					{
+						"key": "X-Auth-Signature",
+						"value": "{{hmac-Signature}}"
+					},
+					{
+						"key": "X-Auth-Version",
+						"value": "{{version}}"
+					},
+					{
+						"key": "X-Auth-Timestamp",
+						"value": "{{timestamp}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"scope\": [\n        \"/rf/v1/gateway/journeys::POST\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{host}}/security/digital/v1/application/token",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"security",
+						"digital",
+						"v1",
+						"application",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
